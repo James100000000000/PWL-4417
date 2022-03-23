@@ -1,5 +1,7 @@
 <html> 
-<head><title>Pengolahan Form</title></head> 
+<head><title>Pengolahan Form</title>
+</head> 
+
 <body> 
 <form action ="processor.php" method="post" 
 name="input"> <table><tr>
