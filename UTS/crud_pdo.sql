@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 19, 2022 at 10:39 AM
+-- Generation Time: Apr 19, 2022 at 05:17 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -24,67 +24,23 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `barang`
---
-
-CREATE TABLE `barang` (
-  `id_barang` int(11) NOT NULL,
-  `nm_barang` varchar(50) NOT NULL,
-  `ft_barang` varchar(50) NOT NULL,
-  `deskripsi` text NOT NULL,
-  `harga` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `barang`
---
-
-INSERT INTO `barang` (`id_barang`, `nm_barang`, `ft_barang`, `deskripsi`, `harga`) VALUES
-(1, 'Attack on Titan - Health Protocol Levi', 'levi.jpg', 'Kaos, Baju, Shirt, Anime, Hobby, Jepang', 140000),
-(2, 'NEKOSHIBA - Shiba Daijoubu Inu', 'neko.jpg', 'Kaos, Baju, Shirt, Anime, Hobby, Jepang', 140000),
-(3, 'HxH/Hunter X Hunter - Killua Drink', 'killua.jpg', 'Kaos, Baju, Shirt, Anime, Hobby, Jepang', 145000),
-(4, 'Boku No Hero/BNHA - Todoroki Hero', 'todoroki.jpg', 'Kaos, Baju, Shirt, Anime, Hobby, Jepang', 140000),
-(5, 'Kimetsu no Yaiba - Cool Giyu', 'giyu.jpg', 'Kaos, Baju, Shirt, Anime, Hobby, Jepang', 140000),
-(6, 'Attack on Titan - Human are Virus', 'titan.jpg', 'Kaos, Baju, Shirt, Anime, Hobby, Jepang', 140000),
-(8, 'Kimetsu no Yaiba - Rengoku Tasty', 'rengoku.jpg', 'Kaos, Baju, Shirt, Anime, Hobby, Jepang', 140000),
-(9, 'Jujutsu Kaisen - Megumi Shiki', 'megumi.jpg', 'Kaos, Baju, Shirt, Anime, Hobby, Jepang', 140000);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `crud_testing`
 --
 
 CREATE TABLE `crud_testing` (
   `id` int(11) NOT NULL,
   `nama` varchar(100) DEFAULT NULL,
-  `email` varchar(100) DEFAULT NULL,
-  `hp` int(15) DEFAULT NULL,
-  `saran` longtext DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `data_saya`
---
-
-CREATE TABLE `data_saya` (
-  `id` double(10,0) NOT NULL,
-  `nama` varchar(50) NOT NULL,
-  `panggilan` varchar(10) NOT NULL,
-  `sex` char(1) NOT NULL,
-  `email` text NOT NULL,
-  `gol_darah` char(2) NOT NULL
+  `harga` int(11) DEFAULT NULL,
+  `gambar` varchar(255) DEFAULT NULL,
+  `jml_stok` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `data_saya`
+-- Dumping data for table `crud_testing`
 --
 
-INSERT INTO `data_saya` (`id`, `nama`, `panggilan`, `sex`, `email`, `gol_darah`) VALUES
-(1, 'James Victorio Admiralis', 'James', 'M', 'jamesvictorio50@gmail.com', 'AB'),
-(2, 'Chris Hemsworth', 'Chris', 'M', 'totallyrealchris@gmail.com', 'O');
+INSERT INTO `crud_testing` (`id`, `nama`, `harga`, `gambar`, `jml_stok`) VALUES
+(3, 'Jas Formal', 1000000, '', 3);
 
 -- --------------------------------------------------------
 
@@ -104,75 +60,33 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`id`, `nama`, `email`, `password`) VALUES
-(1, 'admin', 'jamesvictorio50@gmail.com', 'Hipopotamus7'),
-(9, 'admin', 'victoriojames30@gmail.com', 'lolol'),
-(10, 'admin', 'jamesvictorio50@gmail.com', 'lalala'),
-(11, 'admin', 'victoriojames30@gmail.com', 'admin');
+(14, 'admin', 'test@gmail.com', 'admin'),
+(15, 'admin', 'blaaa@gmail.com', 'admin'),
+(16, 'admin', 'blaaa@gmail.com', 'Hipopotamus7');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pesanan`
+-- Table structure for table `tamu_crud`
 --
 
-CREATE TABLE `pesanan` (
-  `id_pesan` int(11) NOT NULL,
-  `id_barang` int(11) NOT NULL,
-  `nama` varchar(50) NOT NULL,
-  `hp` varchar(15) NOT NULL,
-  `jumlah` int(11) NOT NULL,
-  `alamat` text NOT NULL
+CREATE TABLE `tamu_crud` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(30) DEFAULT NULL,
+  `email` varchar(80) DEFAULT NULL,
+  `hp` varchar(30) DEFAULT NULL,
+  `password` varchar(225) DEFAULT NULL,
+  `peran` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `pesanan`
---
-
-INSERT INTO `pesanan` (`id_pesan`, `id_barang`, `nama`, `hp`, `jumlah`, `alamat`) VALUES
-(1, 9, 'Bima Rakajati', '08123456789', 3, 'Semarang');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tamu`
---
-
-CREATE TABLE `tamu` (
-  `idtamu` int(100) NOT NULL,
-  `nama` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `pesan` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tamu`
---
-
-INSERT INTO `tamu` (`idtamu`, `nama`, `email`, `pesan`) VALUES
-(1, 'Bima', 'bimandugal@gmail.com', 'Bismillah'),
-(2, 'Raka', 'raka@gmail.com', 'Lolos'),
-(3, 'Jati', 'jati@gmail.com', 'UTS');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `barang`
---
-ALTER TABLE `barang`
-  ADD PRIMARY KEY (`id_barang`);
-
---
 -- Indexes for table `crud_testing`
 --
 ALTER TABLE `crud_testing`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `data_saya`
---
-ALTER TABLE `data_saya`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -182,50 +96,32 @@ ALTER TABLE `login`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `pesanan`
+-- Indexes for table `tamu_crud`
 --
-ALTER TABLE `pesanan`
-  ADD PRIMARY KEY (`id_pesan`);
-
---
--- Indexes for table `tamu`
---
-ALTER TABLE `tamu`
-  ADD PRIMARY KEY (`idtamu`);
+ALTER TABLE `tamu_crud`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `barang`
---
-ALTER TABLE `barang`
-  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
---
 -- AUTO_INCREMENT for table `crud_testing`
 --
 ALTER TABLE `crud_testing`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT for table `pesanan`
+-- AUTO_INCREMENT for table `tamu_crud`
 --
-ALTER TABLE `pesanan`
-  MODIFY `id_pesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `tamu`
---
-ALTER TABLE `tamu`
-  MODIFY `idtamu` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `tamu_crud`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
